@@ -53,5 +53,6 @@ export default function SignupPage(){
                 >Signup here
                 </button>
         </div>
+        
     )
 }
