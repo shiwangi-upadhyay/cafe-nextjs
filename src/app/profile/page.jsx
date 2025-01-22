@@ -20,11 +20,11 @@ export default function ProfilePage(){
         }
     };
 
-    const getUserDetails = async () =>{
+    /*const getUserDetails = async () =>{
         await axios.get('/api/users/userData');
         console.log(res.data);
         setData(res.data.data._id); // Update state with user ID
-    }
+    }*/
     
     return(
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -41,10 +41,7 @@ export default function ProfilePage(){
             className="mt-6 w-[10%] bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md"
             >Logout</button>
 
-<button
-            onClick={getUserDetails}
-            className="mt-6 w-[10%] bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md"
-            >getUserDetails</button>
+
 
             
         </div>

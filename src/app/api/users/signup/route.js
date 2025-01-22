@@ -11,9 +11,7 @@
         const reqBody = await request.json();
         // Destructuring to extract all variables coming in
         const { username, email, password } = reqBody;
-
         console.log(reqBody);
-
         // Checking if the user already exists
         const user = await User.findOne({ email });
 
@@ -36,10 +34,11 @@
         const savedUser = await newUser.save();
         console.log(savedUser);
 
+        //send verification email
+        await sendMail({ email, emailType: "VERIFY", userId: savedUser._id });
         return NextResponse.json({
-        message: "User created successfully",
-        success: true,
-        savedUser,
+          message: "User created successfully",
+          success: true,
         });
     } catch (error) {
         return NextResponse.json(
